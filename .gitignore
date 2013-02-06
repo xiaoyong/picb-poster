@@ -1,2 +1,13 @@
-.DS_Store
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.log
 .*.swp
+*.nav
+*.out
+*.snm
+*.toc
+poster/poster.pdf
+recomb2013.pdf
+abstract/abstract.pdf

@@ -1,4 +1,8 @@
-\ProvidesPackage{beamerthemePICB} % this style was created by David Vilar
+% This style was created by David Vilar
+% Forked from /picb/student/yangxinyi/PICB-Poster-20080824-Peter.zip
+% by Qiaoyong Zhong
+% Feb 1, 2013
+\ProvidesPackage{beamerthemePICB}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \selectcolormodel{cmyk}
@@ -6,36 +10,17 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% custom colors
-\definecolor{i6blue}{cmyk}{1,0.305,0,0.06}
-\definecolor{i6bluedark}{rgb}{0.0156,0.2578,0.5625} 
-% http://www.colorsontheweb.com/colorwizard.asp#wizard, used start set: #0066cc
-\definecolor{i6colorscheme1}{HTML}{FF6518}  % orange
-\definecolor{i6colorblockbg}{HTML}{cccccc}  % light gray
-%\definecolor{i6colorblockfg}{HTML}{0033FF}	% logo-blue
-\definecolor{i6colorblockfg}{cmyk}{1,0.75,0,0}	% logo-blue
-\definecolor{i6colorscheme2}{HTML}{000000}  % black
-\definecolor{i6colorscheme3}{HTML}{C3DFFF}  % light blue
-\definecolor{i6colorscheme4}{HTML}{000000} 
-\definecolor{i6colorschemeHeadline}{HTML}{cccccc}  % for headline bg
-%\definecolor{i6colorschemeFootline}{HTML}{000000}  % for headline bg
-\definecolor{i6colorschemeFootline}{HTML}{100D09}  % for headline bg
+% PICB blue
+\definecolor{picbblue}{cmyk}{1,0.75,0,0}
 
 % headline colors and fonts
-%\setbeamercolor{headline}{fg=white,bg=i6colorschemeHeadline} % Comment to set transparent bg
-\setbeamercolor{title in headline}{fg=i6colorblockfg}
-\setbeamerfont{title in headline}{family*={phv}, series=\bfseries, size*={53}{53}}
+\setbeamercolor{title in headline}{fg=picbblue}
 \setbeamercolor{author in headline}{fg=black}
-\setbeamerfont{author in headline}{family*={phv}, size*={30}{30}}
 \setbeamercolor{institute in headline}{fg=black}
-\setbeamerfont{institute in headline}{family*={phv}, size*={30}{30}}
-\setbeamercolor{logo in headline}{fg=black,bg=black}
-\setbeamercolor{separation line}{bg=white}
 
 % footline colors and fonts
-%\setbeamercolor{footline}{fg=black,bg=i6colorschemeHeadline}
 \setbeamercolor{footline}{fg=black} % Set transparent bg
-\setbeamerfont{footline}{family*={phv}, series=\bfseries,size*={25}{25}}
+\setbeamerfont{footline}{size=\normalsize,series=\bf}
 
 % body colors and fonts
 \setbeamercolor*{normal text}{fg=black,bg=white}
@@ -43,32 +28,9 @@
 % block environment
 %\setbeamercolor*{block body}{bg=white,fg=black}
 \setbeamercolor*{block body}{fg=black}
-\setbeamerfont{block body}{family*={phv}, size*={23}{23}}
-%\setbeamercolor*{block title}{fg=i6colorblockfg,bg=i6colorblockbg}
-\setbeamercolor*{block title}{fg=i6colorblockfg}
-\setbeamerfont{block title}{family*={phv}, size*={30}{30}, series=\bfseries}
-
-% example environment
-\setbeamercolor*{example title}{fg=white,bg=i6colorscheme1}
-\setbeamerfont{example title}{size=\large,series=\bf,bg=i6colorscheme1,fg=white}
-
-
-%\setbeamercolor*{example body}{fg=white,bg=i6colorscheme4}
-%\setbeamercolor*{example title}{fg=white,bg=i6colorscheme1}
-
-
-%  \setbeamercolor{framesubtitle}{fg=ta3orange, bg=ta2gray}
-%  \setbeamercolor{author in head/foot}{fg=tabutter, bg=black}
-%  \setbeamercolor{title in head/foot}{bg=tabutter, fg=black}
-
-
-\setbeamercolor{alerted text}{fg=i6colorscheme1}
-%\setbeamercolor{structure}{fg=i6blue}
-
-%  \setbeamertemplate{itemize/enumerate body begin}{
-%  }
-%  \setbeamertemplate{itemize/enumerate body end}{
-%  }
+\setbeamerfont{block body}{size=\normalsize}
+\setbeamercolor*{block title}{fg=picbblue}
+\setbeamerfont{block title}{size=\large, series=\bf}
 
 \setbeamertemplate{itemize items}[triangle]
 \setbeamertemplate{navigation symbols}{}  % no navigation on a poster
@@ -92,73 +54,26 @@
 \setbeamertemplate{headline}{  
   \leavevmode
 
-  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+  \begin{beamercolorbox}[leftskip=.2\paperwidth]{headline}
     \begin{columns}[T]
-
-      \begin{column}{0.0cm}
-      \end{column}
-
-      \begin{column}{7cm}
-%         \vspace{2.0cm}
-%         \includegraphics[width=4.4cm]{picb-logo.pdf}
-      \end{column}
-
       \begin{column}{.7\paperwidth}
-        \vskip 2cm
+        \vskip .025\paperheight
         \raggedright
-        \usebeamercolor{title in headline}{\color{fg}     \Huge{\textbf{\inserttitle}\\[0.8ex]}}
+        \usebeamercolor{title in headline}{\color{fg}     \huge{\textbf{\inserttitle}\\[0.8ex]}}
         \usebeamercolor{author in headline}{\color{fg}    \large{\insertauthor}\\[1.5ex]}
-        \usebeamercolor{institute in headline}{\color{fg} \large{\insertinstitute}\\[1.5ex]~}     
+        \usebeamercolor{institute in headline}{\color{fg} \large{\insertinstitute}\\[1.5ex]}     
       \end{column}
-
-      \begin{column}{.1\paperwidth}
-        \vskip1cm
-        \begin{center}
-          %\includegraphics[width=.7\linewidth]{picb-logo.pdf}
-        \end{center}
-        \vskip1.5cm
-      \end{column}
-
-%       \begin{column}{.03\paperwidth}
-%       \end{column}
-
     \end{columns}
   \end{beamercolorbox}
-  
-%%      \begin{beamercolorbox}[sep=0.1cm,wd=.1\paperwidth,center]{logo in headline}
-%%        \vskip2ex
-%%      \end{beamercolorbox}  
-%%      \begin{beamercolorbox}[sep=1cm,wd=.7\paperwidth]{headline}
-%%        \usebeamercolor{title in headline}{\raggedright\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
-%%        \usebeamercolor{author in headline}{\raggedright\color{fg}\large{\insertauthor}\\[1ex]}
-%%        \usebeamercolor{institute in headline}{\raggedright\color{fg}\large{\insertinstitute}\\[1ex]}     
-%%      \end{beamercolorbox}%
-%%      \begin{beamercolorbox}[sep=0.1cm,wd=.18\paperwidth,center]{logo in headline}
-%%        \includegraphics[height=5cm]{logos/rwth-hks44}
-%%        \vskip2ex
-%%      \end{beamercolorbox}  
-%%    \end{beamercolorbox}
-  
-%  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
-%    \rule{0pt}{2pt}
-%  \end{beamercolorbox}
 }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setbeamertemplate{footline}{
-%  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
-%    \rule{0pt}{2pt}
-%  \end{beamercolorbox}
-  
-  \begin{beamercolorbox}[ht=4.5ex,leftskip=2.4cm,rightskip=2.4cm]{footline}%
+  \begin{beamercolorbox}[ht=4.5ex,leftskip=.05\paperwidth,rightskip=.05\paperwidth]{footline}%
 	\footlinetext
-    \vskip 1.25cm
+    \vskip .015\paperheight
   \end{beamercolorbox}
-
-%  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
-%    \rule{0pt}{2pt}
-%  \end{beamercolorbox}
 }
 
 % Background image
@@ -166,7 +81,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mode<all>
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
